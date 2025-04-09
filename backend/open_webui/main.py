@@ -1010,7 +1010,7 @@ async def get_models(request: Request, user=Depends(get_verified_user)):
             tag.get("name")
             for tag in model.get("info", {}).get("meta", {}).get("tags", [])
         ]
-        tags = [tag.get("name") for tag in model.get("tags", [])]
+        # tags = [tag.get("name") for tag in model.get("tags", [])]
         tags = [tag if isinstance(tag, str) else tag.get("name") for tag in model.get("tags", [])]
         
 
